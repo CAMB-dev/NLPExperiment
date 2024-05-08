@@ -32,5 +32,5 @@ if __name__ == '__main__':
     for i in data_filepath_list:
         datas.append(train_data_read(i))
     sens_list = [jieba.lcut(i) for i in data_filepath_list]
-    model = word2vec.Word2Vec(sens_list, min_count=1, iter=20)
+    model = word2vec.Word2Vec(sens_list, min_count=1, epochs=20)
     model.save("word2vec.model")
